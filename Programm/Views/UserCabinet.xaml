@@ -1,0 +1,79 @@
+﻿<Page x:Class="Programm.Views.UserCabinet"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Programm.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="UserCabinet">
+
+    <Grid Background="White" >
+
+        <Button Width="73" HorizontalAlignment="Left" Margin="10,10,0,0" Content="Выйти" Background="white" Foreground="Black" FontSize="16" FontWeight="Bold" BorderThickness="0" Click="BtnBack_Click" Height="26" VerticalAlignment="Top"/>
+
+        <TextBlock x:Name="login" Text="Не заполнено" Margin="108,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Height="26" HorizontalAlignment="Left" Width="233" />
+        <TextBlock x:Name="money" Text="Не заполнено" Margin="108,36,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Height="24" HorizontalAlignment="Left" Width="520" />
+
+        <Image Source="/avatarki/man.png" x:Name="man" Margin="671,0,0,0" HorizontalAlignment="Left" Width="106" Height="105" VerticalAlignment="Top" />
+        <Image Source="/avatarki/kid.png" x:Name="kid" Margin="671,0,0,0" HorizontalAlignment="Left" Width="106" Height="105" VerticalAlignment="Top" />
+
+
+
+
+        <DataGrid x:Name="FamilyGrid" AutoGenerateColumns="False" Foreground="#FF3E3E3E" FontSize="16" FontWeight="Bold" BorderThickness="0" Margin="385,248,0,0" Height="202" VerticalAlignment="Top" HorizontalAlignment="Left" Width="405" >
+
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#FF785DFF" />
+                    <Setter Property="Foreground" Value="White" />
+
+
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Псевдоним"  Width="*" Binding="{Binding nickname}"/>
+                <DataGridTextColumn Header="Логин"  Width="*" Binding="{Binding login}"/>
+                <DataGridTextColumn Header="Баланс"  Width="*" Binding="{Binding money}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock x:Name="familyMember1" Text="Псевдоним члена семьи" Margin="58,165,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Height="40" HorizontalAlignment="Left" Width="255" />
+        <TextBlock x:Name="AllMoney" Text="Не заполнено" Margin="108,60,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Height="28" HorizontalAlignment="Left" Width="520" />
+        <Button Width="31" HorizontalAlignment="Left" Margin="326,170,0,0" Content="₽" Background="#FF785DFF" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="0" Click="BtnGiveMoney1_Click" x:Name="GiveMoney" Height="24" VerticalAlignment="Top" />
+        <TextBox Text="0"  x:Name="TxbMemberMoney1" FontSize="16" Padding="5" BorderThickness="1" BorderBrush="#D3D3D3" Background="White" MinHeight="30" Margin="109,200,0,0" TextAlignment="Center" HorizontalAlignment="Left" Width="153" Height="32" VerticalAlignment="Top"/>
+        <Button Width="30" HorizontalAlignment="Left" Margin="170,136,0,0" Content="+" Background="#FF785DFF" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="0" Click="BtnAddMember1_Click" x:Name="AddMember" Height="24" VerticalAlignment="Top" />
+
+        <TextBlock x:Name="balance" Text="Баланс:" Margin="26,204,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Height="24" HorizontalAlignment="Left" Width="74" />
+
+        <TextBlock x:Name="familyMember2" Text="Псевдоним члена семьи" Margin="58,243,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Height="40" HorizontalAlignment="Left" Width="254" />
+        <Button Width="30" HorizontalAlignment="Left" Margin="326,248,0,0" Content="₽" Background="#FF785DFF" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="0" Click="BtnGiveMoney2_Click" x:Name="GiveMoney2" Height="24" VerticalAlignment="Top" />
+        <TextBox Text="0"  x:Name="TxbMemberMoney2" FontSize="16" Padding="5" BorderThickness="1" BorderBrush="#D3D3D3" Background="White" MinHeight="30" Margin="108,278,0,0" TextAlignment="Center" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="154"/>
+        <TextBlock x:Name="balance_2" Text="Баланс:" Margin="26,282,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Height="24" HorizontalAlignment="Left" Width="74" />
+        <TextBlock x:Name="familyMember3" Text="Псевдоним члена семьи" Margin="58,319,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Height="40" HorizontalAlignment="Left" Width="254" />
+        <Button Width="30" HorizontalAlignment="Left" Margin="326,324,0,0" Content="₽" Background="#FF785DFF" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="0" Click="BtnGiveMoney3_Click" x:Name="GiveMoney3" Height="24" VerticalAlignment="Top" />
+        <TextBox Text="0"  x:Name="TxbMemberMoney3" FontSize="16" Padding="5" BorderThickness="1" BorderBrush="#D3D3D3" Background="White" MinHeight="30" Margin="108,354,0,0" TextAlignment="Center" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="154"/>
+        <TextBlock x:Name="balance_3" Text="Баланс:" Margin="26,358,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Height="24" HorizontalAlignment="Left" Width="74" />
+        <TextBox  x:Name="TxbFamilyName" FontSize="16" Padding="5" BorderThickness="1" BorderBrush="{x:Null}" Background="White" MinHeight="30" Margin="0,93,0,0" TextAlignment="Center" HorizontalAlignment="Center" Width="290" Height="32" VerticalAlignment="Top" SelectionBrush="#FFD70000" />
+        <Button Width="30" HorizontalAlignment="Left" Margin="220,101,0,0" Content="✓" Background="#FF785DFF" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="0" Click="SaveCNG_Click" x:Name="SaveCNG" Height="24" VerticalAlignment="Top" />
+        <Button Width="43" HorizontalAlignment="Left" Margin="16,48,0,0" Content="Обн" Background="#FF785DFF" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="0" Click="Refr_Click" x:Name="Refr" Height="24" VerticalAlignment="Top" />
+        <Button Width="132" HorizontalAlignment="Left" Margin="16,101,0,0" Content="Внести 10000" Background="#FF785DFF" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="0" Click="BtnAddCard_Click" x:Name="AddMember_Копировать" Height="24" VerticalAlignment="Top" />
+        <TextBlock x:Name="premium" Text="Не заполнено" Margin="375,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Height="26" HorizontalAlignment="Left" Width="233" />
+        <Button Width="146"  HorizontalAlignment="Left" Margin="375,41,0,0" Content="Купить премиум" Background="#FF785DFF" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="0" Click="PremBuy_Click" x:Name="premBuy" Height="24" VerticalAlignment="Top" />
+        <Button Width="104" HorizontalAlignment="Left" Margin="385,158,0,0" Content="На машину" Background="#FF785DFF" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="0" Click="Car_Click" x:Name="Refr_Копировать" Height="24" VerticalAlignment="Top" />
+        <TextBlock Visibility="Collapsed" x:Name="AllMoneyCar" Text="Не заполнено" Margin="385,197,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Height="28" HorizontalAlignment="Left" Width="405" />
+        <Button Width="104" HorizontalAlignment="Left" Margin="510,158,0,0" Content="На телефон" Background="#FF785DFF" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="0" Click="Phone_Click" x:Name="Refr_Копировать1" Height="24" VerticalAlignment="Top" />
+        <Button Width="111" HorizontalAlignment="Left" Margin="652,158,0,0" Content="На наушники" Background="#FF785DFF" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="0" Click="Ear_Click" x:Name="Refr_Копировать2" Height="24" VerticalAlignment="Top" />
+        <Image Margin="263,123,213,0" Visibility="Collapsed" x:Name="MoneyPNG" Source="/Image1.png" Stretch="Fill"/>
+
+
+
+
+
+    </Grid>
+
+
+
+
+</Page>
